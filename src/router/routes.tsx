@@ -5,7 +5,7 @@ import PublicRouteWrapper from './components/PublicRouteWrapper';
 import { Header } from '../pages/layout';
 import Home from '../pages/home/Home';
 import { Login, Register } from '../pages/auth';
-import NotFound from '../pages/NotFound';
+import { NotFound } from '../pages';
 
 export const router = createBrowserRouter(
     createRoutesFromElements(

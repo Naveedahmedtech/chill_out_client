@@ -4,23 +4,29 @@
 
 
 :root {
-    --color-primary: #3b82f6;
-    --color-secondary: #f59e0b;
-    --color-background: #f3f4f6;
+    --color-primary: #4B00BE;
+    --color-secondary: #D7BCFF;
+    --color-background: #E8D9FF;
     --color-text: #1f2937;
     --color-bg-white: #FFFF;
     --color-dark-background: #dfe0e0;
     --color-error: #FF0000;
+    --color-button-bg: #7A23FF;
+    --color-button-text: #ffff;
+    --color-link-active: #0042EA;
 }
 
 .dark {
-    --color-primary: #3b82f6;
-    --color-secondary: #fcd34d;
-    --color-background: #1f2937;
+    --color-primary: #4B00BE;
+    --color-secondary: #fffa;
+    --color-background: #E8D9FF;
     --color-bg-white: #1f2937;
     --color-text: #f3f4f6;
     --color-dark-background: #101720;
     --color-error: #FF0000;
+    --color-button-bg: #ffff;
+    --color-button-text: #7A23FF;
+    --color-link-active: #0042EA;
 }
 
 html {
