@@ -7,6 +7,7 @@ import Text from '../../components/Text';
 import { IconColors } from '../../utils/styles';
 import CommonHeader from '../components/auth/CommonHeader';
 import { Link, useNavigate } from 'react-router-dom';
+import { APP_NAME } from '../../utils/BASE_URL';
 
 
 const AdditionalBody = () => (
@@ -17,7 +18,11 @@ const AdditionalBody = () => (
         </div>
         <Text className="text-xs mt-2">By clicking on “create account” you will accept our terms and conditions and privacy policy.</Text>
     </div>
-)
+);
+const TitleText = () => {
+    return <Text className="text-4xl font-semibold mb-5 ">Welcome Back to <span className='title-font font-medium'>{APP_NAME}</span></Text>
+}
+
 
 
 const ForgotPassword = () => {
@@ -26,7 +31,7 @@ const ForgotPassword = () => {
         <>
             <CommonHeader
                 image={image}
-                primaryHeading="Chillout"
+                primaryHeading={<TitleText />}
                 secondaryHeading="Forgot Password"
                 paragraph="Please provide your email to send a code to reset your password"
                 // type="sign-up"

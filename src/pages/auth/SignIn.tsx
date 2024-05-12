@@ -6,7 +6,8 @@ import image from "../../assets/images/image.png";
 import Text from '../../components/Text';
 import { IconColors } from '../../utils/styles';
 import CommonHeader from '../components/auth/CommonHeader';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { APP_NAME } from '../../utils/BASE_URL';
 
 
 const AdditionalBody = () => (
@@ -16,28 +17,34 @@ const AdditionalBody = () => (
       <Link to="/auth/register" className="text-sm text-blue-500 underline">Register</Link>
     </div>
   </div>
-)
+);
+
+const TitleText = () => {
+  return <Text className="text-4xl font-semibold mb-5 ">Welcome Back to <span className='title-font font-medium'>{APP_NAME}</span></Text>
+}
 
 
 const Login = () => {
+  const navigate = useNavigate()
   return (
     <>
       <CommonHeader
         image={image}
-        primaryHeading="Welcome to Back"
+        primaryHeading={<TitleText />}
         secondaryHeading="Sign In"
         paragraph="Sign in to get back to your account."
         type="sign-in"
         additionBody={<AdditionalBody />}
       >
         <Formik
-          initialValues={{ email: '', password: ''  }}
+          initialValues={{ email: '', password: '' }}
           validationSchema={loginSchema}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
               console.log(values);
               setSubmitting(false);
             }, 400);
+            navigate("/home")
           }}
         >
           {({ isSubmitting }) => (

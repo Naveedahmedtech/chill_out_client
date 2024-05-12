@@ -6,16 +6,21 @@ import image from "../../assets/images/image.png";
 import { IconColors } from '../../utils/styles';
 import CommonHeader from '../components/auth/CommonHeader';
 import { useNavigate } from 'react-router-dom';
+import Text from '../../components/Text';
+import { APP_NAME } from '../../utils/BASE_URL';
 
 
 
 const ResetPassword = () => {
     const navigate = useNavigate()
+    const TitleText = () => {
+        return <Text className="text-4xl font-semibold mb-5 "><span className='title-font font-medium'>{APP_NAME}</span></Text>
+    }
     return (
         <>
             <CommonHeader
                 image={image}
-                primaryHeading="Chillout"
+                primaryHeading={<TitleText />}
                 secondaryHeading="Reset Password"
                 paragraph="Create a new strong password"
                 type="sign-up"

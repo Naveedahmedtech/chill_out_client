@@ -11,7 +11,7 @@ export interface IChildrenProps {
 
 export interface ICommonHeaderProps extends IClassNameProps, IChildrenProps {
   image: string;
-  primaryHeading: string;
+  primaryHeading: React.ReactNode;
   secondaryHeading: string;
   paragraph?: string;
   type?: "sign-in" | "sign-up";
@@ -19,6 +19,12 @@ export interface ICommonHeaderProps extends IClassNameProps, IChildrenProps {
 }
 
 export interface ITextProps extends IClassNameProps, IChildrenProps {}
+
+export interface IIconLink extends IClassNameProps {
+  url: string;
+  Icon: React.ComponentType<{ className?: string }>; // Adjust the type of Icon prop
+  text: string;
+}
 
 // Define IInputFieldPropsBase for the custom properties you want to add
 export interface IInputFieldPropsBase {

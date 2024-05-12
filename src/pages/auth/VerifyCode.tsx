@@ -1,10 +1,11 @@
-import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import VerificationInput from 'react-verification-input';
 import { verifyCodeSchema } from '../../utils/formSchema';
 import CommonHeader from '../components/auth/CommonHeader';
 import image from "../../assets/images/image.png";
 import { useNavigate } from 'react-router-dom';
+import Text from '../../components/Text';
+import { APP_NAME } from '../../utils/BASE_URL';
 
 const VerifyCode = () => {
     const navigate = useNavigate();
@@ -16,12 +17,16 @@ const VerifyCode = () => {
         // alert('Verification Code: ' + values.code);
         navigate("/auth/reset-password")
         setSubmitting(false);
-    };
+    };  
+
+    const TitleText = () => {
+        return <Text className="text-4xl font-semibold mb-5 "><span className='title-font font-medium'>{APP_NAME}</span></Text>
+    }
 
     return (
         <CommonHeader
             image={image}
-            primaryHeading="Chillout"
+            primaryHeading={<TitleText />}
             secondaryHeading="Verify Code"
             paragraph="Please verify code to reset your password"
         >

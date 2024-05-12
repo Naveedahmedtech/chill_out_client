@@ -1,12 +1,12 @@
 // Import Navigate and Outlet from 'react-router-dom'
 import { Navigate, Outlet } from 'react-router-dom';
 // Import useAuth hook to check authentication status
-// import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
 
 const PublicRouteWrapper = () => {
     // Destructure isLoggedIn from useAuth to check if the user is logged in
-    // const { userData } = useAuth();
-    const userData = false;
+    const { userData } = useAuth();
+    // const userData = false;
 
 
     // If the user is logged in, redirect to the home page

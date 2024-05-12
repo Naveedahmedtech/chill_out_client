@@ -1,4 +1,3 @@
-import { navLinks } from '../header/utils/navLinks';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,11 +10,11 @@ const Footer = () => {
             <p>&copy; {currentYear} Naveed Ahmed. All Rights Reserved.</p>
           </div>
           <div className="w-full lg:w-auto order-3 lg:order-2 flex justify-center lg:justify-between items-center mt-6 lg:mt-0">
-            {navLinks.map((link, index) => (
+            {/* {navLinks.map((link, index) => (
               <a key={index} href={link.href} className="nav-link mr-2 last:mr-0">
                 {link.name}
               </a>
-            ))}
+            ))} */}
           </div>
           <div className="w-full lg:w-auto order-1 lg:order-3 flex flex-col lg:flex-row justify-center items-center mt-6 lg:mt-0">
             <p className="mb-4 lg:mb-0 lg:mr-4">Follow me on:</p>
