@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { BASE_URL } from "../../../baseUrl";
+import { BASE_URL } from "../../utils/BASE_URL";
 
 export const authApi = createApi({
   reducerPath: "authApi",
@@ -16,21 +16,14 @@ export const authApi = createApi({
     }),
     login: builder.mutation({
       query: (body) => ({
-        url: "/login",
+        url: "/sign-in",
         method: "POST",
         body,
       }),
     }),
     changePassword: builder.mutation({
       query: (body) => ({
-        url: "/change-password",
-        method: "PATCH",
-        body,
-      }),
-    }),
-    updateUsername: builder.mutation({
-      query: (body) => ({
-        url: "/users/update-username",
+        url: "/reset-password",
         method: "PATCH",
         body,
       }),

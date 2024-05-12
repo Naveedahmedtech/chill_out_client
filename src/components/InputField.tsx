@@ -1,18 +1,25 @@
-import { useField } from 'formik';
-import { useState } from 'react';
+import { useField, FieldHookConfig } from 'formik';
+import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { IconColors } from '../utils/styles';
+import { IInputFieldProps } from '../types/types';
 
-const InputField = ({ label, leftIcon, ...props }) => {
-    const [field, meta] = useField(props);
+const InputField: React.FC<IInputFieldProps> = ({ label, leftIcon, ...props }) => {
+    const [field, meta ] = useField(props);
     const [showPassword, setShowPassword] = useState(false);
 
-    const toggleShowPassword = () => {
-        setShowPassword(!showPassword);
+    const toggleShowPassword = () => setShowPassword(!showPassword);
+
+    const inputType = props.type === 'password' && !showPassword ? 'password' : 'text';
+    const inputProps = {
+        ...field,
+        type: inputType,
+        id: props.name
     };
 
     return (
         <div className="mb-4">
-            <label htmlFor={props.id || props.name} className="block text-sm font-medium text-gray-700">
+            <label htmlFor={props.name} className="block text-sm font-medium text-primary">
                 {label}
             </label>
             <div className="mt-1 relative shadow-sm">
@@ -22,24 +29,21 @@ const InputField = ({ label, leftIcon, ...props }) => {
                     </div>
                 )}
                 <input
-                    className={`block w-full pl-10 pr-10 sm:text-sm border-gray-300 rounded-lg ${meta.touched && meta.error ? 'border-red-500' : ''
-                        }`}
-                    {...field}
-                    {...props}
-                    type={props.type === 'password' && !showPassword ? 'password' : 'text'}
+                    className={`block w-full pl-10 pr-3 sm:text-sm border-[#CBAAFF] rounded-lg focus:border-primary ${meta.touched && meta.error ? 'border-red-500' : ''}`}
+                    {...inputProps}
                 />
                 {props.type === 'password' && (
-                    <div className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
-                        onClick={toggleShowPassword}>
-                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                    <div className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer" onClick={toggleShowPassword}>
+                        {showPassword ? <FaEyeSlash color={IconColors.color} /> : <FaEye color={IconColors.color} />}
                     </div>
                 )}
             </div>
-            {meta.touched && meta.error ? (
+            {meta.touched && meta.error && (
                 <div className="text-xs text-red-500">{meta.error}</div>
-            ) : null}
+            )}
         </div>
     );
 };
+
 
 export default InputField;

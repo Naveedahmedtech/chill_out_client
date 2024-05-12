@@ -1,8 +1,77 @@
+import { Formik, Form } from 'formik';
+import InputField from '../../components/InputField';
+import { registerSchema } from '../../utils/formSchema';
+import { FaEnvelope, FaEye, FaLock } from 'react-icons/fa';
+import image from "../../assets/images/image.png";
+import Text from '../../components/Text';
+import { IconColors } from '../../utils/styles';
+import CommonHeader from '../components/auth/CommonHeader';
+import { Link } from 'react-router-dom';
+
+
+const AdditionalBody = () => (
+  <div className='mt-5'>
+    <div className='flex items-center gap-1'>
+      <Text className="text-sm">Already have an account?</Text>
+      <Link to="/auth/sign-in" className="text-sm text-blue-500 underline">Sign-in</Link>
+    </div>
+    <Text className="text-xs mt-2">By clicking on “create account” you will accept our terms and conditions and privacy policy.</Text>
+  </div>
+)
+
 
 const Register = () => {
   return (
-    <div>Register</div>
-  )
-}
+    <>
+      <CommonHeader
+        image={image}
+        primaryHeading="Welcome to Chillout"
+        secondaryHeading="Register"
+        paragraph="Register account to connect with people and see or publish photos and reels."
+        type="sign-up"
+        additionBody={<AdditionalBody />}
+      >
+        <Formik
+          initialValues={{ email: '', password: '', confirm_password: '' }}
+          validationSchema={registerSchema}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              console.log(values);
+              setSubmitting(false);
+            }, 400);
+          }}
+        >
+          {({ isSubmitting }) => (
+            <Form>
+              <InputField
+                label="Email"
+                name="email"
+                type="email"
+                leftIcon={<FaEnvelope color={IconColors.color} />}
+              />
+              <InputField
+                label="Password"
+                name="password"
+                type="password"
+                leftIcon={<FaLock color={IconColors.color} />}
+                rightIcon={<FaEye color={IconColors.color} />}
+              />
+              <InputField
+                label="Confirm Password"
+                name="confirm_password"
+                type="password"
+                leftIcon={<FaLock color={IconColors.color} />}
+                rightIcon={<FaEye color={IconColors.color} />}
+              />
+              <button type="submit" disabled={isSubmitting} className="mt-3 btn border-2 border-[#7A23FF] bg-[#7A23FF] w-full py-2 text-white rounded-[7px] hover:bg-white hover:text-[#7A23FF] transition-all">
+                Register Account
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </CommonHeader>
+    </>
+  );
+};
 
-export default Register
+export default Register;
