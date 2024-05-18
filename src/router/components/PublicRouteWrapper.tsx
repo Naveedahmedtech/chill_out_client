@@ -5,8 +5,8 @@ import { useAuth } from '../../hooks/useAuth';
 
 const PublicRouteWrapper = () => {
     // Destructure isLoggedIn from useAuth to check if the user is logged in
-    const { userData } = useAuth();
-    // const userData = false;
+    // const { userData } = useAuth();
+    const userData = true;
 
 
     // If the user is logged in, redirect to the home page

@@ -2,7 +2,7 @@ import {
   FaHome,
   FaSearch,
   FaVideo,
-  FaEnvelope,
+  FaComments,
   FaPlus,
   FaUser,
 } from "react-icons/fa";
@@ -31,7 +31,7 @@ export const links = [
   },
   {
     url: "/messages",
-    Icon: FaEnvelope,
+    Icon: FaComments,
     text: "Message",
     className:
       "text-primary hover:text-white hover:bg-primary p-2 rounded-lg transition-all mb-5",
