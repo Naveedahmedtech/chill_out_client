@@ -2,7 +2,7 @@ import { Formik, Form } from 'formik';
 import InputField from '../../components/InputField';
 import { resetPasswordSchema } from '../../utils/formSchema';
 import { FaEye, FaLock } from 'react-icons/fa';
-import image from "../../assets/images/image.png";
+import image from "../../assets/images/auth/image.png";
 import { IconColors } from '../../utils/styles';
 import CommonHeader from '../components/auth/CommonHeader';
 import { useNavigate } from 'react-router-dom';

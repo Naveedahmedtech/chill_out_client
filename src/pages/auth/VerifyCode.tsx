@@ -2,7 +2,7 @@ import { Formik, Form, Field } from 'formik';
 import VerificationInput from 'react-verification-input';
 import { verifyCodeSchema } from '../../utils/formSchema';
 import CommonHeader from '../components/auth/CommonHeader';
-import image from "../../assets/images/image.png";
+import image from "../../assets/images/auth/image.png";
 import { useNavigate } from 'react-router-dom';
 import Text from '../../components/Text';
 import { APP_NAME } from '../../utils/BASE_URL';

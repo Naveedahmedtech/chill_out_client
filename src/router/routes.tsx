@@ -3,9 +3,8 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 import PrivateRouteWrapper from './components/PrivateRouteWrapper';
 import PublicRouteWrapper from './components/PublicRouteWrapper';
 import { Header } from '../pages/layout';
-import Home from '../pages/home/Home';
 import { ForgotPassword, SignIn, Register, ResetPassword, VerifyCode } from '../pages/auth';
-import { NotFound } from '../pages';
+import { Chat, Create, Home, NotFound, Reels, Search } from '../pages';
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -14,6 +13,10 @@ export const router = createBrowserRouter(
                 <Route path="/" element={<Header />} >
                     <Route index element={<Home />} />
                     <Route path='home' element={<Home />} />
+                    <Route path='search' element={<Search />} />
+                    <Route path='create-reels' element={<Create />} />
+                    <Route path='reels' element={<Reels />} />
+                    <Route path='chat' element={<Chat />} />
                 </Route>
             </Route>
             <Route element={<PublicRouteWrapper />}>

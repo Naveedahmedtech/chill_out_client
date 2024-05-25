@@ -23,21 +23,21 @@ export const links = [
       "text-primary hover:text-white hover:bg-primary p-2 rounded-lg transition-all mb-5",
   },
   {
-    url: "/reals",
+    url: "/reels",
     Icon: FaVideo,
     text: "Reals",
     className:
       "text-primary hover:text-white hover:bg-primary p-2 rounded-lg transition-all mb-5",
   },
   {
-    url: "/messages",
+    url: "/chat",
     Icon: FaComments,
     text: "Message",
     className:
       "text-primary hover:text-white hover:bg-primary p-2 rounded-lg transition-all mb-5",
   },
   {
-    url: "/create",
+    url: "/create-reels",
     Icon: FaPlus,
     text: "Create",
     className:
