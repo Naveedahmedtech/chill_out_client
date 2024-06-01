@@ -7,7 +7,7 @@ const CommonHeader: React.FC<ICommonHeaderProps> = ({ children, image, primaryHe
     return (
         <>
             <CardLayout>
-                <div className='rounded-[28px] shadow-slate-500 bg-white shadow-lg flex flex-col md:flex-row mx-auto my-8 max-w-4xl overflow-hidden'>
+                <div className='rounded-[28px] shadow-slate-500 bg-white shadow-lg flex flex-col md:flex-row  my-8 max-w-4xl overflow-hidden mx-5'>
                     <div className='md:w-1/2 w-full hidden sm:block'>
                         <img src={image} alt="Descriptive Alt Text" className='w-full h-full object-cover rounded-l-[28px]' />
                     </div>

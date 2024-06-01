@@ -1,10 +1,16 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { BASE_URL } from "../../utils/BASE_URL";
 
+
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
     baseUrl: `${BASE_URL}/auth`,
+    prepareHeaders: async (headers) => {
+      headers.set("x-api-key", "secret-api-key");
+      return headers;
+    },
+    credentials: "include",
   }),
   endpoints: (builder) => ({
     register: builder.mutation({
